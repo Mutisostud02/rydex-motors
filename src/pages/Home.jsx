@@ -404,11 +404,13 @@ export default function Home() {
             <article className="card">
               <h3>Get in touch</h3>
               <p>
-                Phone: <a href="tel:+254700000000">+254 700 000 000</a>
+                Phone: <a href="tel:+2540202073333">+254 (0) 20 2073333</a>
               </p>
               <p>
                 Email:{" "}
-                <a href="mailto:info@rydexmotors.ke">info@rydexmotors.ke</a>
+                <a href="mailto:info@rydexmotorsltd.co.ke">
+                  info@rydexmotorsltd.co.ke
+                </a>
               </p>
             </article>
             <article className="card">
