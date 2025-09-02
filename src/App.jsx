@@ -5,14 +5,30 @@ import Vehicles from "./pages/Vehicles.jsx";
 import Bikes from "./pages/Bikes.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import VehicleDetail from "./pages/VehicleDetail.jsx";
+import BikeDetail from "./pages/BikeDetail.jsx";
+import { useState } from "react";
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <BrowserRouter>
       <header className="site-header">
         <div className="container header-inner">
           <div className="brand">Rydex Motors Ltd</div>
-          <nav className="nav">
+          <button
+            className="menu-btn"
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+          >
+            ☰
+          </button>
+          <nav
+            className={`nav ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(false)}
+          >
             <Link to="/">Home</Link>
             <Link to="/vehicles">Vehicles</Link>
             <Link to="/bikes">Bikes</Link>
@@ -25,7 +41,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/vehicles" element={<Vehicles />} />
+        <Route path="/vehicles/:id" element={<VehicleDetail />} />
         <Route path="/bikes" element={<Bikes />} />
+        <Route path="/bikes/:id" element={<BikeDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

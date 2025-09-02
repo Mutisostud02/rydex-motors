@@ -1,0 +1,42 @@
+[
+  {
+    "id": "kawasaki-klr-650",
+    "title": "Kawasaki KLR 650",
+    "price": "ks,",
+    "tag": "Available in Kenya",
+    "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2Fa89fe6da-0b01-4e1e-a211-be9a0aab141e.jpeg&w=256&q=75",
+    "brand": "Kawasaki",
+    "bodyType": "",
+    "year": null
+  },
+  {
+    "id": "ktm-1190-adventure-r",
+    "title": "KTM 1190 Adventure R",
+    "price": "KES 1,799,000",
+    "tag": "Available in Kenya",
+    "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2Ff6bae6a2-66ef-40b9-80b8-5b652284edb1.jpeg&w=256&q=75",
+    "brand": "KTM",
+    "bodyType": "",
+    "year": null
+  },
+  {
+    "id": "kawasaki-ninja-650",
+    "title": "Kawasaki Ninja 650",
+    "price": "KES 1,250,000",
+    "tag": "Available in Kenya",
+    "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2FIMG_9178.jpeg&w=256&q=75",
+    "brand": "Kawasaki",
+    "bodyType": "",
+    "year": null
+  },
+  {
+    "id": "honda-cbr600rr",
+    "title": "Honda CBR600RR",
+    "price": "KES 1,149,999",
+    "tag": "Available in Kenya",
+    "image": "",
+    "brand": "Honda",
+    "bodyType": "",
+    "year": null
+  }
+]

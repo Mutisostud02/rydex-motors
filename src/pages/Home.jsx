@@ -183,155 +183,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="search" className="section">
-        <div className="container">
-          <h2>Find what fits you</h2>
-          <div className="search-panel">
-            <div className="toggle">
-              <button
-                type="button"
-                className={availability === "kenya" ? "selected" : ""}
-                onClick={() => setAvailability("kenya")}
-                aria-pressed={availability === "kenya"}
-              >
-                Available in Kenya
-              </button>
-              <button
-                type="button"
-                className={availability === "import" ? "selected" : ""}
-                onClick={() => setAvailability("import")}
-                aria-pressed={availability === "import"}
-              >
-                Direct Import
-              </button>
-              <button
-                type="button"
-                className={availability === "both" ? "selected" : ""}
-                onClick={() => setAvailability("both")}
-                aria-pressed={availability === "both"}
-              >
-                Both
-              </button>
-            </div>
-            <div className="fields">
-              <div className="field">
-                <label htmlFor="q">Search vehicle</label>
-                <input
-                  id="q"
-                  type="text"
-                  placeholder="Type vehicle name (e.g. Demio, Vitz)"
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                />
-              </div>
-              <div className="field">
-                <label htmlFor="budget">Filter by budget</label>
-                <select
-                  id="budget"
-                  value={budgetId}
-                  onChange={(e) => setBudgetId(e.target.value)}
-                >
-                  {BUDGETS.map((b) => (
-                    <option key={b.id} value={b.id}>
-                      {b.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-            <div className="subfilters">
-              <div>
-                <p className="subheading">Brands</p>
-                <div className="grid-chips">
-                  {ALL_BRANDS.map((b) => {
-                    const count = brandCounts[b] || 0;
-                    const isActive = brand === b;
-                    return (
-                      <button
-                        key={b}
-                        className={`chip${isActive ? " active" : ""}`}
-                        type="button"
-                        disabled={count === 0 && !isActive}
-                        aria-pressed={isActive}
-                        onClick={() => setBrand(isActive ? "" : b)}
-                        title={
-                          count === 0 ? "No results" : `${count} result(s)`
-                        }
-                      >
-                        {b}
-                        {count ? ` (${count})` : ""}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-              <div>
-                <p className="subheading">Body types</p>
-                <div className="grid-chips">
-                  {ALL_BODY_TYPES.map((t) => {
-                    const count = bodyCounts[t] || 0;
-                    const isActive = bodyType === t;
-                    return (
-                      <button
-                        key={t}
-                        className={`chip${isActive ? " active" : ""}`}
-                        type="button"
-                        disabled={count === 0 && !isActive}
-                        aria-pressed={isActive}
-                        onClick={() => setBodyType(isActive ? "" : t)}
-                        title={
-                          count === 0 ? "No results" : `${count} result(s)`
-                        }
-                      >
-                        {t}
-                        {count ? ` (${count})` : ""}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-            <div className="actions">
-              <a
-                className="btn"
-                href="#"
-                onClick={(event) => {
-                  event.preventDefault();
-                  clearAll();
-                }}
-              >
-                Clear all
-              </a>
-              <a className="btn primary" href="/vehicles">
-                Search
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Removed search and filters from Home */}
 
-      <section id="featured" className="section">
-        <div className="container">
-          <h2>Featured vehicles ({baseFiltered.length})</h2>
-          {loading && <p>Loading vehicles…</p>}
-          {error && <p>{error}</p>}
-          <div className="vehicle-grid">
-            {baseFiltered.map((v) => (
-              <article key={v.id} className="vehicle-card">
-                <img className="thumb" src={v.image} alt={v.title} />
-                <div className="vehicle-info">
-                  <h3>{v.title}</h3>
-                  <p className="price">{v.price}</p>
-                  <p className="tag">{v.tag}</p>
-                </div>
-              </article>
-            ))}
-            {!loading && !error && baseFiltered.length === 0 && (
-              <p>No vehicles match your filters. Try clearing some filters.</p>
-            )}
-          </div>
-        </div>
-      </section>
+      {/* Removed featured vehicles grid from Home; moved to Vehicles page */}
 
       <section id="services" className="section">
         <div className="container">
@@ -404,7 +258,7 @@ export default function Home() {
             <article className="card">
               <h3>Get in touch</h3>
               <p>
-                Phone: <a href="tel:+2540202073333">+254 (0) 20 2073333</a>
+                Phone: <a href="tel:020207333">020207333</a>
               </p>
               <p>
                 Email:{" "}
@@ -415,7 +269,7 @@ export default function Home() {
             </article>
             <article className="card">
               <h3>Visit us</h3>
-              <p>Nairobi, Kenya</p>
+              <p>Ground floor Prestige plaza, Ngong road, Nairobi kenya.</p>
               <p>Open Mon–Sat, 9am – 6pm</p>
             </article>
           </div>

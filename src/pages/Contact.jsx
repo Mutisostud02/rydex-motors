@@ -95,12 +95,12 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <p>Nairobi, Kenya</p>
+            <p>Ground floor Prestige plaza, Ngong road, Nairobi kenya.</p>
             <p>
-              Phone: <a href="tel:+2540202073333">+254 (0) 20 2073333</a>
+              Phone: <a href="tel:020207333">020207333</a>
             </p>
             <p>
-              Email:{" "}
+              Email:
               <a href="mailto:info@rydexmotorsltd.co.ke">
                 info@rydexmotorsltd.co.ke
               </a>

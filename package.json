@@ -4,14 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "scrape:kaiandkaro": "node scripts/scrape-kaiandkaro.cjs",
+    "scrape:kaiandkaro:custom": "SOURCE_URL=\"$SOURCE_URL\" node scripts/scrape-kaiandkaro.cjs",
+    "import:csv": "node scripts/import-csv-to-json.cjs"
   },
   "dependencies": {
     "@emailjs/browser": "4.4.1",
     "@fontsource/jost": "^5.2.6",
+    "papaparse": "5.5.3",
+    "puppeteer": "22.15.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "6.30.1"
