@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 
 const BUDGETS = [
   { id: "", label: "Any budget", min: 0, max: Infinity },
@@ -172,12 +172,12 @@ export default function Home() {
             <h1>Kenya’s trusted car and bike marketplace</h1>
             <p>Find what fits you — your personality, dream and pocket.</p>
             <div className="hero-cta">
-              <a className="btn primary" href="#vehicles">
+              <Link className="btn primary" to="/vehicles">
                 Explore vehicles
-              </a>
-              <a className="btn" href="#bikes">
+              </Link>
+              <Link className="btn" to="/bikes">
                 Buy a bike
-              </a>
+              </Link>
             </div>
           </div>
         </div>
