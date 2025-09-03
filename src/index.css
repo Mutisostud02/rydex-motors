@@ -125,6 +125,8 @@ body {
 }
 .card h3 { font-size: 18px; margin-bottom: 6px; }
 .card p { color: #444; }
+.card a { color: inherit; text-decoration: none; }
+.card a:hover { text-decoration: none; }
 
 .pill-list { display: flex; gap: 10px; list-style: none; margin-top: 10px; padding: 0; }
 .pill-list li { background: #e8eef5; padding: 6px 10px; border-radius: 999px; font-size: 14px; }
@@ -188,6 +190,8 @@ body {
 .contact-form .field + .field { margin-top: 10px; }
 .contact-form textarea { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; }
 .map .map-placeholder { height: 240px; background: #eef3f8; border: 1px dashed #c7d3e2; border-radius: 8px; display: grid; place-items: center; color: #637081; margin-bottom: 10px; }
+.map a { color: inherit; text-decoration: none; }
+.map a:hover { text-decoration: none; }
 
 /* Detail pages: two-column layout */
 .detail-grid { display: grid; grid-template-columns: 520px 1fr; gap: 24px; align-items: start; }

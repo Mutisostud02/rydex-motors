@@ -59,6 +59,14 @@ export default function BikeDetail() {
   );
   const emailLink = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
 
+  const derivedDescription = `${item.title}${
+    item.tag ? ` — ${item.tag}` : ""
+  }. Contact us for full specs and availability.`;
+  const descriptionToShow =
+    item.description && String(item.description).trim().length > 0
+      ? item.description
+      : derivedDescription;
+
   return (
     <section className="section">
       <div className="container">
@@ -77,8 +85,8 @@ export default function BikeDetail() {
           <div className="detail-info">
             <p className="price">{item.price}</p>
             <p className="tag">{item.tag}</p>
-            {item.description && (
-              <p style={{ marginTop: 8 }}>{item.description}</p>
+            {descriptionToShow && (
+              <p style={{ marginTop: 8 }}>{descriptionToShow}</p>
             )}
             <div className="hero-cta" style={{ marginTop: 12 }}>
               <a className="btn primary" href={emailLink}>

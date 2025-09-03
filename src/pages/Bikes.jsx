@@ -100,7 +100,11 @@ export default function Bikes() {
               />
               <div className="vehicle-info">
                 <h3>{v.title}</h3>
-                <p className="price">{v.price}</p>
+                <p className="price">
+                  {v?.price && String(v.price).trim().length
+                    ? v.price
+                    : "Price on request"}
+                </p>
                 <p className="tag">{v.tag}</p>
               </div>
             </Link>

@@ -1,5 +1,20 @@
 [
   {
+    "id": "husqvarna-te-250",
+    "title": "Husqvarna TE 250",
+    "price": "KES 1,199,000",
+    "tag": "Available in Kenya",
+    "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2F317d4a34-f906-44db-989e-3baea04b00c2.jpeg&w=256&q=75",
+    "brand": "Husqvarna",
+    "bodyType": "",
+    "year": null,
+    "description": "Available2013 Husqvarna TE 250Automatic250 CCKenyan Used #Paidlisting",
+    "engineCc": 250,
+    "transmission": "",
+    "condition": "",
+    "sellerType": ""
+  },
+  {
     "id": "kawasaki-klr-650",
     "title": "Kawasaki KLR 650",
     "price": "ks,",
@@ -7,7 +22,12 @@
     "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2Fa89fe6da-0b01-4e1e-a211-be9a0aab141e.jpeg&w=256&q=75",
     "brand": "Kawasaki",
     "bodyType": "",
-    "year": null
+    "year": null,
+    "description": "",
+    "engineCc": 651,
+    "transmission": "",
+    "condition": "",
+    "sellerType": ""
   },
   {
     "id": "ktm-1190-adventure-r",
@@ -17,7 +37,12 @@
     "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2Ff6bae6a2-66ef-40b9-80b8-5b652284edb1.jpeg&w=256&q=75",
     "brand": "KTM",
     "bodyType": "",
-    "year": null
+    "year": null,
+    "description": "Available2013 KTM 1190 Adventure RAutomatic1190 CCKenyan Used Powered by a very powerful twin \"V\" engine that churns  150Hp, the 1190 Adventure R doesn't take any prisoners whether its a smooth long distance tarmac cruise or a gruelling battle with the African wilderness.",
+    "engineCc": 1190,
+    "transmission": "",
+    "condition": "brand new",
+    "sellerType": ""
   },
   {
     "id": "kawasaki-ninja-650",
@@ -27,7 +52,27 @@
     "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2FIMG_9178.jpeg&w=256&q=75",
     "brand": "Kawasaki",
     "bodyType": "",
-    "year": null
+    "year": null,
+    "description": "Available2022 Kawasaki Ninja 650Manual650 CCForeign Used One word would describe the 2022 Kawasaki Ninja well, \"Versatile\"",
+    "engineCc": 650,
+    "transmission": "manual",
+    "condition": "",
+    "sellerType": ""
+  },
+  {
+    "id": "husqvarna-fc450",
+    "title": "Husqvarna FC450",
+    "price": "KES 899,000",
+    "tag": "Available in Kenya",
+    "image": "https://www.kaiandkaro.com/_next/image?url=https%3A%2F%2Fkai-and-karo.ams3.cdn.digitaloceanspaces.com%2Fmedia%2Fvehicles%2Fthumbnails%2F072a6bec-183b-4dc4-9bfa-f744205875d8.jpeg&w=256&q=75",
+    "brand": "Husqvarna",
+    "bodyType": "",
+    "year": null,
+    "description": "Available2021 Husqvarna FC450Manual450 CCForeign Used 57 hours only, Fresh import from South Africa. Excellent condition and ready for serious offroad riding.Lipa mdogo mdogo option available.KES 899,000Private Seller Compare",
+    "engineCc": 450,
+    "transmission": "",
+    "condition": "",
+    "sellerType": ""
   },
   {
     "id": "honda-cbr600rr",
@@ -37,6 +82,41 @@
     "image": "",
     "brand": "Honda",
     "bodyType": "",
-    "year": null
+    "year": null,
+    "description": "",
+    "engineCc": 600,
+    "transmission": "",
+    "condition": "",
+    "sellerType": ""
+  },
+  {
+    "id": "kpr200",
+    "title": "KPR200",
+    "price": "kes,",
+    "tag": "Available in Kenya",
+    "image": "",
+    "brand": "KPR",
+    "bodyType": "",
+    "year": null,
+    "description": "",
+    "engineCc": 200,
+    "transmission": "",
+    "condition": "",
+    "sellerType": ""
+  },
+  {
+    "id": "jincheng-jc180",
+    "title": "Jincheng JC180",
+    "price": "KES 199,999",
+    "tag": "Available in Kenya",
+    "image": "",
+    "brand": "Jincheng",
+    "bodyType": "",
+    "year": null,
+    "description": "Available2015 Jincheng JC180Manual180 CCKenyan Used The Jinchen JC180 is an entry-level motorcycle with a 180cc single-cylinder engine. It's designed for basic commuting, offering sufficient power for city rides. The bike is known for being economical and straightforward, with minimal features, making it a budget-friendly option. Fuel efficiency is typically good, averaging around 35-40 km/l, whic",
+    "engineCc": 180,
+    "transmission": "",
+    "condition": "",
+    "sellerType": ""
   }
 ]

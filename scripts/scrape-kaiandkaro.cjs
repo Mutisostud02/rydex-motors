@@ -11,7 +11,6 @@ const SNAPSHOT_DIR = path.resolve(__dirname, '..', 'tmp');
 
 function withPageParam(url, pageNum) {
   const u = new URL(url);
-  // common param name is 'page'
   if (pageNum > 1) {
     u.searchParams.set('page', String(pageNum));
   } else {
@@ -69,7 +68,7 @@ function numericPrice(text) {
 
     const items = await page.evaluate(() => {
       const UI_BAD_WORDS = /(search vehicle|filter by budget|advanced search|brand & model|available in kenya|direct import|both|click here|explore bikes|show results of)/i;
-      const BRAND_RE = /(Toyota|Mazda|Subaru|Honda|Lexus|Mercedes|BMW|Nissan|Audi|Volkswagen|Volvo|Land Rover|Chevrolet|Yamaha|Suzuki|Kawasaki|Ducati|KTM|Bajaj|TVS|Royal Enfield)/i;
+      const BRAND_RE = /(Toyota|Mazda|Subaru|Honda|Lexus|Mercedes|BMW|Nissan|Audi|Volkswagen|Volvo|Land Rover|Chevrolet|Yamaha|Suzuki|Kawasaki|Ducati|KTM|Bajaj|TVS|Royal Enfield|Husqvarna|Kibo|Jincheng|Skygo|KPR)/i;
 
       function pickTitle(el) {
         const tEl = el.querySelector('h1, h2, h3, .title, .vehicle-title');
@@ -81,6 +80,17 @@ function numericPrice(text) {
           .filter(s => !UI_BAD_WORDS.test(s));
         const line = lines.find(s => BRAND_RE.test(s)) || lines[0] || '';
         return line.length > 140 ? line.slice(0, 140).trim() : line;
+      }
+
+      function pickDesc(el) {
+        const lines = (el.textContent || '')
+          .split('\n')
+          .map(s => s.trim())
+          .filter(Boolean)
+          .filter(s => !UI_BAD_WORDS.test(s))
+          .filter(s => !/^(K(E)?S?\s*[0-9,]+)/i.test(s));
+        const desc = lines.find(s => s.length > 40) || lines[1] || lines[0] || '';
+        return desc.length > 400 ? desc.slice(0, 400).trim() : desc;
       }
 
       function pickImage(el) {
@@ -97,22 +107,25 @@ function numericPrice(text) {
         return url;
       }
 
-      function pickDesc(el) {
-        const lines = (el.textContent || '')
-          .split('\n')
-          .map(s => s.trim())
-          .filter(Boolean)
-          .filter(s => !UI_BAD_WORDS.test(s))
-          .filter(s => !/^(K(E)?S?\s*[0-9,]+)/i.test(s));
-        const desc = lines.find(s => s.length > 40) || lines[1] || lines[0] || '';
-        return desc.length > 280 ? desc.slice(0, 280).trim() : desc;
+      function extractExtra(text) {
+        const t = text.replace(/\s+/g, ' ');
+        const engineMatch = t.match(/(\d{2,4})\s*CC/i);
+        const transmissionMatch = t.match(/\b(Automatic|Manual)\b/i);
+        const conditionMatch = t.match(/\b(Brand New|Kenyan Used|Foreign Used)\b/i);
+        const sellerMatch = t.match(/\b(Private Seller|In-house Stock)\b/i);
+        return {
+          engineCc: engineMatch ? Number(engineMatch[1]) : null,
+          transmission: transmissionMatch ? transmissionMatch[1] : '',
+          condition: conditionMatch ? conditionMatch[1] : '',
+          sellerType: sellerMatch ? sellerMatch[1] : '',
+        };
       }
 
       const results = [];
       const candidates = Array.from(document.querySelectorAll('a, article, div')).filter(el => {
         const txt = el.textContent?.toLowerCase() || '';
-        return (txt.includes('available') || txt.includes('foreign used') || txt.includes('kenyan used')) && (txt.includes('kes') || txt.includes('ksh')) && BRAND_RE.test(txt);
-      }).slice(0, 500);
+        return (txt.includes('available') || txt.includes('foreign used') || txt.includes('kenyan used') || txt.includes('brand new')) && (txt.includes('kes') || txt.includes('ksh')) && BRAND_RE.test(txt);
+      }).slice(0, 800);
 
       for (const el of candidates) {
         const text = el.textContent || '';
@@ -126,7 +139,8 @@ function numericPrice(text) {
         const yearMatch = title.match(/\b(19|20)\d{2}\b/);
         const id = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
         const description = pickDesc(el);
-        results.push({ id, title: title.replace(/\s+/g, ' ').trim(), price: priceText.trim(), tag: text.toLowerCase().includes('direct import') ? 'Direct Import' : 'Available in Kenya', image: img, brand: brand || '', bodyTypeText: text, year: yearMatch ? Number(yearMatch[0]) : null, description });
+        const extra = extractExtra(text);
+        results.push({ id, title: title.replace(/\s+/g, ' ').trim(), price: priceText.trim(), tag: text.toLowerCase().includes('direct import') ? 'Direct Import' : 'Available in Kenya', image: img, brand: brand || '', bodyTypeText: text, year: yearMatch ? Number(yearMatch[0]) : null, description, ...extra });
       }
       return results;
     });
@@ -135,10 +149,9 @@ function numericPrice(text) {
       if (seen.has(v.id)) continue; seen.add(v.id);
       const bodyType = extractBodyType(`${v.title} ${v.bodyTypeText}`);
       const priceNum = numericPrice(v.price);
-      // Filter out UI artifacts and implausible entries
       if (/^show results of/i.test(v.title)) continue;
       if (!Number.isNaN(priceNum) && priceNum < 100000) continue;
-      const normalized = { id: v.id, title: v.title, price: parsePrice(v.price) || v.price, tag: v.tag, image: v.image, brand: v.brand, bodyType, year: v.year, description: v.description || '' };
+      const normalized = { id: v.id, title: v.title, price: parsePrice(v.price) || v.price, tag: v.tag, image: v.image, brand: v.brand, bodyType, year: v.year, description: v.description || '', engineCc: v.engineCc || null, transmission: v.transmission || '', condition: v.condition || '', sellerType: v.sellerType || '' };
       allItems.push(normalized);
     }
   }
