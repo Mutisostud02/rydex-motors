@@ -22,3 +22,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Scraper snapshots and temp
+/tmp/
+/tmp/**
+**/tmp/**
+
+# Environment files
+.env
+.env.*
+
+# Local data imports
+*.csv
+*.tsv

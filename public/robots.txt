@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rydexmotorsltd.co.ke/sitemap.xml
+

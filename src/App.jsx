@@ -16,7 +16,16 @@ function App() {
     <BrowserRouter>
       <header className="site-header">
         <div className="container header-inner">
-          <div className="brand">Rydex Motors Ltd</div>
+          <div className="brand">
+            <img
+              src="/logo/favicon-32x32.png"
+              alt="Rydex Motors logo"
+              width="24"
+              height="24"
+              style={{ marginRight: 8 }}
+            />
+            Rydex Motors Ltd
+          </div>
           <button
             className="menu-btn"
             aria-label="Toggle menu"
