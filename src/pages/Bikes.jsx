@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FALLBACK =
   "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360' viewBox='0 0 640 360'%3E%3Crect width='100%25' height='100%25' fill='%23eef3f8'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%2390a4b8' font-family='Arial' font-size='18'%3ENo image%3C/text%3E%3C/svg%3E";
 const EMAIL = "info@rydexmotorsltd.co.ke";
-const PHONE = "020207333";
+const PHONE = "0202324344";
 
 export default function Bikes() {
   const [items, setItems] = useState([]);

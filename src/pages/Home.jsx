@@ -95,7 +95,7 @@ export default function Home() {
             <article className="card">
               <h3>Get in touch</h3>
               <p>
-                Phone: <a href="tel:020207333">020207333</a>
+                Phone: <a href="tel:0202324344">0202324344</a>
               </p>
               <p>
                 Email:{" "}

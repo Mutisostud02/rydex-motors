@@ -97,7 +97,7 @@ export default function Contact() {
             />
             <p>Ground floor Prestige plaza, Ngong road, Nairobi kenya.</p>
             <p>
-              Phone: <a href="tel:020207333">020207333</a>
+              Phone: <a href="tel:0202324344">0202324344</a>
             </p>
             <p>
               Email:
